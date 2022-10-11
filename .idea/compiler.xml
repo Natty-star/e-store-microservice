@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="stock-service" />
+        <module name="config-server" />
+        <module name="payPal-service" />
+        <module name="payment-service" />
+        <module name="creditCard-service" />
+        <module name="bankAccount-service" />
+        <module name="product-service" />
+        <module name="order-service" />
+        <module name="account-service" />
+        <module name="cloud-gateway" />
+        <module name="service-registry" />
+        <module name="shipping-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="account-service" target="17" />
+      <module name="bankAccount-service" target="17" />
+      <module name="cloud-gateway" target="17" />
+      <module name="config-server" target="17" />
+      <module name="creditCard-service" target="17" />
+      <module name="order-service" target="17" />
+      <module name="payment-service" target="17" />
+      <module name="payPal-service" target="17" />
+      <module name="product-service" target="17" />
+      <module name="service-registry" target="17" />
+      <module name="shipping-service" target="17" />
+      <module name="stock-service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
