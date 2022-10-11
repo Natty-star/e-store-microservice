@@ -1,4 +1,4 @@
-package domain;
+package edu.miu.cs590.productservice.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

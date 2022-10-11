@@ -1,11 +1,11 @@
-package controller;
+package edu.miu.cs590.productservice.controller;
 
-import domain.Product;
+import edu.miu.cs590.productservice.domain.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.ProductService;
+import edu.miu.cs590.productservice.service.ProductService;
 
 import java.util.List;
 
