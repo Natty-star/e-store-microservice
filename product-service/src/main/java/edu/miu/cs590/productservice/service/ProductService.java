@@ -1,6 +1,7 @@
 package edu.miu.cs590.productservice.service;
 
 import edu.miu.cs590.productservice.domain.Product;
+import edu.miu.cs590.productservice.dto.ProductDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,13 +9,13 @@ import java.util.List;
 @Service
 public interface ProductService {
 
-    List<Product> getAll();
+    List<ProductDto> getAll();
 
-    Product getId(Long id);
+    ProductDto getId(Long id);
 
-    Product save(Product product);
+    ProductDto save(Product product);
 
-    Product edit(Product product);
+    ProductDto edit(Product product);
 
 
 

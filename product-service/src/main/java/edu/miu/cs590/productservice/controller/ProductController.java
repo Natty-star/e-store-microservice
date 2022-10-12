@@ -1,7 +1,9 @@
 package edu.miu.cs590.productservice.controller;
 
 import edu.miu.cs590.productservice.domain.Product;
+import edu.miu.cs590.productservice.dto.ProductDto;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,22 +23,22 @@ public class ProductController {
     //    Product edit(Product product);
 
     @GetMapping("/all")
-    public ResponseEntity<List<Product>> getAll(){
-        return new ResponseEntity<>(productService.getAll(),HttpStatus.OK);
+    public ResponseEntity<List<ProductDto>> getAll(){
+        return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/one")
-    public ResponseEntity<Product> getOne(@RequestParam Long id){
+    public ResponseEntity<ProductDto> getOne(@RequestParam Long id){
         return new ResponseEntity<>(productService.getId(id),HttpStatus.OK);
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Product> save(@RequestBody Product product){
-        return new ResponseEntity<Product>(productService.save(product),HttpStatus.OK);
+    public ResponseEntity<ProductDto> save(@RequestBody Product product){
+        return new ResponseEntity<ProductDto>(productService.save(product),HttpStatus.OK);
     }
 
     @PostMapping("/edit")
-    public ResponseEntity<Product> edit(@RequestBody Product product){
+    public ResponseEntity<ProductDto> edit(@RequestBody Product product){
         return new ResponseEntity<>(productService.edit(product),HttpStatus.OK);
     }
 
