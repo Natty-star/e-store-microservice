@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/bankAccount-service/BankTransfer.iml" filepath="$PROJECT_DIR$/bankAccount-service/BankTransfer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/creditCard-service/CreditCard.iml" filepath="$PROJECT_DIR$/creditCard-service/CreditCard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment-service/Payment.iml" filepath="$PROJECT_DIR$/payment-service/Payment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payPal-service/Paypal.iml" filepath="$PROJECT_DIR$/payPal-service/Paypal.iml" />
       <module fileurl="file://$PROJECT_DIR$/account-service/account-service.iml" filepath="$PROJECT_DIR$/account-service/account-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/bankAccount-service/bankAccount-service.iml" filepath="$PROJECT_DIR$/bankAccount-service/bankAccount-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-gateway/cloud-gateway.iml" filepath="$PROJECT_DIR$/cloud-gateway/cloud-gateway.iml" />

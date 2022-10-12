@@ -7,28 +7,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Paypal" />
         <module name="stock-service" />
-        <module name="config-server" />
-        <module name="payment-service" />
-        <module name="payPal-service" />
         <module name="creditCard-service" />
         <module name="bankAccount-service" />
         <module name="product-service" />
+        <module name="CreditCard" />
+        <module name="cloud-gateway" />
+        <module name="config-server" />
+        <module name="Payment" />
+        <module name="payment-service" />
+        <module name="payPal-service" />
+        <module name="BankTransfer" />
         <module name="order-service" />
         <module name="account-service" />
         <module name="service-registry" />
-        <module name="cloud-gateway" />
         <module name="shipping-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="account-service" target="17" />
       <module name="bankAccount-service" target="17" />
+      <module name="BankTransfer" target="17" />
       <module name="cloud-gateway" target="17" />
       <module name="config-server" target="17" />
+      <module name="CreditCard" target="17" />
       <module name="creditCard-service" target="17" />
       <module name="order-service" target="17" />
+      <module name="Payment" target="17" />
       <module name="payment-service" target="17" />
+      <module name="Paypal" target="17" />
       <module name="payPal-service" target="17" />
       <module name="product-service" target="17" />
       <module name="service-registry" target="17" />
@@ -38,6 +46,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BankTransfer" options="-parameters" />
+      <module name="CreditCard" options="-parameters" />
+      <module name="Payment" options="-parameters" />
+      <module name="Paypal" options="-parameters" />
       <module name="account-service" options="-parameters" />
       <module name="bankAccount-service" options="-parameters" />
       <module name="cloud-gateway" options="-parameters" />
