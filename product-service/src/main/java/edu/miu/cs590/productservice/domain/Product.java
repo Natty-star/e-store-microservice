@@ -12,13 +12,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private double price;
     private String vender;
 
-    @ManyToOne
-    private Category catagory;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Category category;
 
 }
