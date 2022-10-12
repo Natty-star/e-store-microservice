@@ -23,26 +23,10 @@ public class StockServiceImpl implements StockService{
         return StockResponse.builder()
                 .productId(s.getProductId())
                 .quantity(s.getQuantity())
-                .isAvailable(s.getIsAvailable())
+
                 .build();
 
     }
-
-    /**
-     *  ProductDto getAll();
-     *     ProductDto getId(Long id);
-     *     ProductDto addProduct(Long id, Long quantity);
-     *     ProductDto deduct(Long id, Long quantity);
-     *
-     *     String checkThreshold(Long id);
-     *
-     *
-     *      private Long id;
-     *     private Long productId;
-     *     private Long quantity;
-     *     private Boolean isAvailable;
-     *     private Long thresholdQuantity;
-     */
 
 
 
@@ -68,6 +52,7 @@ public class StockServiceImpl implements StockService{
         return stockRepo.findById(id).map(stock ->
                 StockResponse.builder()
                     .quantity(stock.getQuantity())
+                        .id(stock.getId())
                         .isAvailable(stock.getIsAvailable())
                         .productId(stock.getProductId())
                     .build()
@@ -79,8 +64,9 @@ public class StockServiceImpl implements StockService{
         Stock p = stockRepo.findById(id).get();
         p.setQuantity(quantity + p.getQuantity());
         return StockResponse.builder()
-
                 .quantity(p.getQuantity())
+                .isAvailable(p.getIsAvailable())
+                .productId(p.getProductId())
                 .build();
     }
 
