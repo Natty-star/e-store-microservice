@@ -1,0 +1,51 @@
+
+server:
+  port: 8086
+
+spring:
+  application:
+    name: PAYMENT-SERVICE
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+#  datasource:
+#    username: postgres
+#    password: password
+#    url: jdbc:postgresql://localhost:5432/payment
+
+  #    hikari:
+  #      username:posgtres
+
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#
+#        format_sql: true
+#    show-sql: true
+#    defer-datasource-initialization: true
+
+#  sql:
+#    init:
+#      mode: always
+
+
+#  main:
+#    allow-bean-definition-overriding: true
+
+#  web:
+#    resources:
+#      static-locations: classpath:/resources/images
+
+
+

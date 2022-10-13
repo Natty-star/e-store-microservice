@@ -17,10 +17,11 @@ import java.util.List;
 public class ProductController {
 
     private final ProductService productService;
-    // List<Product> getAll();
-    //    Product getId(Long id);
-    //    Product save(Product product);
-    //    Product edit(Product product);
+
+    @GetMapping("/getQuantity")
+    public ResponseEntity<Long> getQuantity(@RequestParam Long productId){
+        return productService.getQuantity(productId);
+    }
 
     @GetMapping("/all")
     public ResponseEntity<List<ProductDto>> getAll(){
@@ -34,7 +35,7 @@ public class ProductController {
 
     @PostMapping("/save")
     public ResponseEntity<ProductDto> save(@RequestBody Product product){
-        return new ResponseEntity<ProductDto>(productService.save(product),HttpStatus.OK);
+        return new ResponseEntity<>(productService.save(product),HttpStatus.OK);
     }
 
     @PostMapping("/edit")

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -16,8 +17,17 @@ public class StockController {
     private final StockService stockService;
 
 
-    @GetMapping("/getAll")
-    public ResponseEntity<?> getAll(@RequestParam List<Long> productIds){
+    @GetMapping("/getProduct")
+    public ResponseEntity<?> getQuantity(@RequestParam Long productId){
+        return new ResponseEntity<>(stockService.getQuantity(productId),HttpStatus.OK);
+    }
+
+    @GetMapping("/deduct")
+    public String deductStock(@RequestBody List<Map<Long,Long>> products) {
+        return stockService.deductProduct(products);
+    }
+        @GetMapping("/getAll")
+    public ResponseEntity<?> getAll(@RequestBody List<Long> productIds){
 
         List<StockResponse> stockResponses = stockService.getStock(productIds);
 
@@ -40,10 +50,10 @@ public class StockController {
         return new ResponseEntity<>(stockService.addProduct(id,quantity),HttpStatus.OK);
     }
 
-    @PostMapping("/deduct")
-    public ResponseEntity<String> deduct(@RequestParam Long id, @RequestParam Long quantity){
-        return new ResponseEntity<>(stockService.deductProduct(id,quantity),HttpStatus.OK);
-    }
+//    @PostMapping("/deduct")
+//    public ResponseEntity<String> deduct(@RequestParam Long id, @RequestParam Long quantity){
+//        return new ResponseEntity<>(stockService.deductProduct(id,quantity),HttpStatus.OK);
+//    }
 
 
     @GetMapping("/getThreshold")
