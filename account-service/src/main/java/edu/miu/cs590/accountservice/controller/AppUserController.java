@@ -21,11 +21,17 @@ public class AppUserController {
         return appUserService.getAllUser();
     }
 
-    @GetMapping("/email")
-    public AppUserResponse getUserByEmail(@PathVariable String email){
-        return appUserService.getUserByEmail(email);
+
+    @GetMapping("/{id}")
+    public AppUserResponse getUserById(@PathVariable Long id){
+        return appUserService.getUserById(id);
     }
-    @PostMapping("/signUp")
+
+    @GetMapping("/login/{userName}")
+    public AppUser getUser(@PathVariable String userName){
+        return appUserService.getUser(userName);
+    }
+    @PostMapping("/register")
     public ResponseEntity<?> createUser(@RequestBody AppUser appUser){
         appUserService.createUser(appUser);
         return new ResponseEntity<>(HttpStatus.OK);

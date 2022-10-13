@@ -59,4 +59,24 @@ public class AppUserService {
         }
         return false;
     }
+
+    public AppUserResponse getUserById(Long id) {
+        AppUser appUser = appUserRepo.findById(id).get();
+        AppUserResponse appUserResponse = AppUserResponse.builder()
+                .Id(appUser.getId())
+                .firstName(appUser.getFirstName())
+                .lastName(appUser.getLastName())
+                .userName(appUser.getUserName())
+                .email(appUser.getEmail())
+                .isActive(appUser.isActive())
+                .defaultPaymentMethod(appUser.getDefaultPaymentMethod())
+                .shippingAddress(appUser.getShippingAddress())
+                .password(appUser.getPassword())
+                .build();
+        return appUserResponse;
+    }
+
+    public AppUser getUser(String userName) {
+        return appUserRepo.findByUserName(userName);
+    }
 }
