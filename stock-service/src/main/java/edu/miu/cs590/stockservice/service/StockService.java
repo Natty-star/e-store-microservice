@@ -5,6 +5,7 @@ import edu.miu.cs590.stockservice.dto.StockResponse;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Map;
 
 public interface StockService {
 
@@ -15,7 +16,7 @@ public interface StockService {
     ResponseEntity<?> getQuantity (Long productId);
     StockResponse getById(Long id);
     StockResponse addProduct(Long id, Long quantity);
-    String deductProduct(Long id, Long quantity);
+    String deductProduct(List<Map<Long,Long>> products);
 
     Long checkThreshold(Long id);
 
