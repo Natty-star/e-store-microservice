@@ -2,6 +2,7 @@ package edu.miu.cs590.productservice.service;
 
 import edu.miu.cs590.productservice.domain.Product;
 import edu.miu.cs590.productservice.dto.ProductDto;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,5 @@ public interface ProductService {
     ProductDto edit(Product product);
 
 
-
-
+    ResponseEntity<Long> getQuantity(Long productId);
 }

@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface StockRepo extends JpaRepository<Stock,Long> {
     List<Stock> findByProductIdIn(List<Long> productIds);
+
+    Stock findByProductId(Long productId);
 }

@@ -16,6 +16,11 @@ public class StockController {
     private final StockService stockService;
 
 
+    @GetMapping("/getProduct")
+    public ResponseEntity<?> getQuantity(@RequestParam Long productId){
+        return new ResponseEntity<>(stockService.getQuantity(productId),HttpStatus.OK);
+    }
+
     @GetMapping("/getAll")
     public ResponseEntity<?> getAll(@RequestParam List<Long> productIds){
 

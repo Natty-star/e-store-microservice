@@ -20,7 +20,7 @@ public class Stock {
     @Column(unique=true)
     private Long productId;
     private Long quantity;
-    private Boolean isAvailable;
+//    private Boolean isAvailable;
     private Long thresholdQuantity;
 
 
