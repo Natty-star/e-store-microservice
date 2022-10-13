@@ -27,28 +27,28 @@ public class StockServiceApplication {
 		 */
 		return args -> {
 			Stock stock = new Stock();
-			stock.setProductId(2L);
-			stock.setQuantity(50L);
+			stock.setProductId(12L);
+			stock.setQuantity(150L);
 			stock.setThresholdQuantity(10L);
-			stock.setIsAvailable(true);
+//			stock.setIsAvailable(true);
 
 			stockRepo.save(stock);
 
 			Stock stock2 = new Stock();
-			stock.setProductId(3L);
-			stock.setQuantity(50L);
-			stock.setThresholdQuantity(30L);
-			stock.setIsAvailable(true);
+			stock2.setProductId(23L);
+			stock2.setQuantity(50L);
+			stock2.setThresholdQuantity(30L);
+//			stock.setIsAvailable(true);
 
-			stockRepo.save(stock);
+			stockRepo.save(stock2);
 
 			Stock stock3 = new Stock();
-			stock.setProductId(4L);
-			stock.setQuantity(100L);
-			stock.setThresholdQuantity(20L);
-			stock.setIsAvailable(true);
+			stock3.setProductId(4L);
+			stock3.setQuantity(100L);
+			stock3.setThresholdQuantity(20L);
+//			stock.setIsAvailable(true);
 
-			stockRepo.save(stock);
+			stockRepo.save(stock3);
 
 		};
 	}

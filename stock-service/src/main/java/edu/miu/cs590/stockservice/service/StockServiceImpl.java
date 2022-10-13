@@ -26,6 +26,7 @@ public class StockServiceImpl implements StockService{
 
                 .build();
 
+
     }
 
 
@@ -36,6 +37,7 @@ public class StockServiceImpl implements StockService{
         return stockRepo.findByProductIdIn(productIds).stream()
                 .map(stock1 ->
                         StockResponse.builder()
+                                .id(stock1.getId())
                                 .productId(stock1.getProductId())
                                 .quantity(stock1.getQuantity())
                                 .isAvailable(stock1.getQuantity() > 0)
@@ -48,12 +50,23 @@ public class StockServiceImpl implements StockService{
     }
 
     @Override
+    public ResponseEntity<?> getQuantity(Long productId) {
+        Stock st = stockRepo.findByProductId(productId);
+        if(st.getQuantity() != null){
+            return new ResponseEntity<>(st.getQuantity(), HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>("no product with this id", HttpStatus.OK);
+        }
+
+    }
+
+    @Override
     public StockResponse getById(Long id) {
         return stockRepo.findById(id).map(stock ->
                 StockResponse.builder()
                     .quantity(stock.getQuantity())
                         .id(stock.getId())
-                        .isAvailable(stock.getIsAvailable())
+                        .isAvailable(stock.getQuantity() > 0)
                         .productId(stock.getProductId())
                     .build()
         ).get();
@@ -65,7 +78,7 @@ public class StockServiceImpl implements StockService{
         p.setQuantity(quantity + p.getQuantity());
         return StockResponse.builder()
                 .quantity(p.getQuantity())
-                .isAvailable(p.getIsAvailable())
+                .isAvailable(p.getQuantity()>0)
                 .productId(p.getProductId())
                 .build();
     }
