@@ -1,6 +1,6 @@
 package edu.miu.cs590.payPalservice.Service;
 
-import edu.miu.cs590.payPalservice.repository.Repository;
+import edu.miu.cs590.payPalservice.repository.PaypalRepository;
 import edu.miu.cs590.payPalservice.entity.Transactions;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class PPServiceImpl implements PPService {
 
     @Autowired
-    private Repository repository;
+    private PaypalRepository paypalRepository;
     public String processPayment(String username, double amount) {
 
      Transactions transactionInfo= Transactions.builder()
@@ -22,7 +22,7 @@ public class PPServiceImpl implements PPService {
              .transactionDate(LocalDate.now())
              .build();
 
-        repository.save(transactionInfo);
+        paypalRepository.save(transactionInfo);
 
 log.info("Payment is processed successfully by Paypal for the user: "+username+" with the amount: "+amount);
 
