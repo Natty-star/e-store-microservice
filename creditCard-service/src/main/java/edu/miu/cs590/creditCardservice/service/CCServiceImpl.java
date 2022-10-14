@@ -1,7 +1,7 @@
-package edu.miu.cs590.creditCardservice;
+package edu.miu.cs590.creditCardservice.service;
 
 import edu.miu.cs590.creditCardservice.Repository.CCRepository;
-import edu.miu.cs590.creditCardservice.service.CCService;
+import edu.miu.cs590.creditCardservice.entity.Transactions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

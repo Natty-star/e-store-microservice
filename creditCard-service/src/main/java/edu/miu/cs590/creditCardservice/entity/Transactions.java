@@ -1,4 +1,4 @@
-package edu.miu.cs590.creditCardservice;
+package edu.miu.cs590.creditCardservice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
