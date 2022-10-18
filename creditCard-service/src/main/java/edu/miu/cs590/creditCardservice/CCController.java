@@ -18,7 +18,7 @@ public class CCController {
 
 
     @GetMapping("/pay/{username}/{amount}")
-    public String processPayment ( @PathVariable("username") String username, @PathVariable("amount") Double amount){
+    public String processPayment ( @PathVariable("username") Long username, @PathVariable("amount") Double amount){
 
 
 

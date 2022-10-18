@@ -11,10 +11,13 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Component
-@RequiredArgsConstructor
 public class JwtTokenUtil {
 
     private final JwtConfig config;
+
+    public JwtTokenUtil(JwtConfig config) {
+        this.config = config;
+    }
 
     public String generateToken(String id) {
         Claims claims = Jwts.claims().setSubject(id);

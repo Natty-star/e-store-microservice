@@ -8,10 +8,10 @@ public class PPServiceImpl implements PPService {
 
     @Autowired
     private PPRepository repository;
-    public String processPayment(String username, double amount) {
+    public String processPayment(Long userId, double amount) {
 
      Transactions transactionInfo= Transactions.builder()
-             .cardHolderName(username)
+             .cardHolderName(userId)
              .cardNumber("123456789")
              .creditedAmount(amount)
              .CCV(123)

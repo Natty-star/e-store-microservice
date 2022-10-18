@@ -8,7 +8,7 @@ public class BAServiceImpl implements BAService {
 
     @Autowired
     private BARepository repository;
-    public String processPayment(String username, double amount) {
+    public String processPayment(Long username, double amount) {
 
      Transactions transactionInfo= Transactions.builder()
              .cardHolderName(username)

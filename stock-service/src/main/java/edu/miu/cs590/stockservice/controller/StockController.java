@@ -22,7 +22,7 @@ public class StockController {
         return new ResponseEntity<>(stockService.getQuantity(productId),HttpStatus.OK);
     }
 
-    @GetMapping("/deduct")
+    @PostMapping("/deduct")
     public String deductStock(@RequestBody List<Map<Long,Long>> products) {
         return stockService.deductProduct(products);
     }

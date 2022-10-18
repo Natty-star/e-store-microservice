@@ -29,28 +29,28 @@ public class PaymentServiceImpl implements PaymentService {
 
         try {
 
-            switch (paymentRequest.getPreferredPaymentMethod()) {
+            switch (paymentRequest.getDefaultPaymentMethod()) {
 
 
                 case "credit-card":
                     conformation = restTemplate
-                            .getForObject("http://localhost:8081/credit-card/pay/"
-                                    + paymentRequest.getUsername()
-                                    + "/" + paymentRequest.getPaymentAmount(),
+                            .getForObject("http://localhost:8088/credit-card/pay/"
+                                    + paymentRequest.getUserId()
+                                    + "/" + paymentRequest.getPrice(),
                                     String.class);
                     break;
                 case "paypal":
                     conformation = restTemplate
-                            .getForObject("http://localhost:8083/paypal/pay/"
-                                    + paymentRequest.getUsername() + "/"
-                                    + paymentRequest.getPaymentAmount(),
+                            .getForObject("http://localhost:8089/paypal/pay/"
+                                    + paymentRequest.getUserId() + "/"
+                                    + paymentRequest.getPrice(),
                                     String.class);
                     break;
                 case "bank-transfer":
                     conformation = restTemplate
-                            .getForObject("http://localhost:8082/bank-transfer/pay/"
-                                    + paymentRequest.getUsername() + "/"
-                                    + paymentRequest.getPaymentAmount(),
+                            .getForObject("http://localhost:8089/bank-transfer/pay/"
+                                    + paymentRequest.getUserId() + "/"
+                                    + paymentRequest.getPrice(),
                                     String.class);
                     break;
                 default:
@@ -66,10 +66,10 @@ public class PaymentServiceImpl implements PaymentService {
 
         Payment payment = Payment.builder()
 
-                .username(paymentRequest.getUsername())
+                .userId(paymentRequest.getUserId())
                 .orderId(paymentRequest.getOrderId())
-                .preferredPaymentMethod(paymentRequest.getPreferredPaymentMethod())
-                .paymentAmount(paymentRequest.getPaymentAmount())
+                .preferredPaymentMethod(paymentRequest.getDefaultPaymentMethod())
+                .paymentAmount(paymentRequest.getPrice())
                 .paymentDate(LocalDate.now(Clock.systemDefaultZone()))
                 .paymentStatus(conformation)
                 .build();

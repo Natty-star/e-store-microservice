@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ShipmentRequest {
 
-    private int orderId;
+    private Long orderId;
     private String street;
     private String city;
     private String state;

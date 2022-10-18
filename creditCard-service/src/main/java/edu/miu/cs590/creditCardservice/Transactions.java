@@ -22,7 +22,7 @@ public class Transactions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String cardHolderName;
+    private Long cardHolderName;
     private String cardNumber;
     private int CCV;
     private double creditedAmount;

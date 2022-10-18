@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("payment")
+@RequestMapping("/payment")
 public class PaymentAPI {
 
     @Autowired
@@ -14,8 +14,9 @@ public class PaymentAPI {
 
     // a post function to create a payment
     @PostMapping
-    public void createPayment(@RequestBody PaymentRequest paymentRequest) {
+    public String  createPayment(@RequestBody PaymentRequest paymentRequest) {
         paymentService.createPayment(paymentRequest);
+        return "payment service ok";
 
     }
 

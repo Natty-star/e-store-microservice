@@ -1,10 +1,12 @@
 package edu.miu.cs590.cloudgateway.config;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ConfigurationProperties("jwt")
 public class JwtConfig {
-    private String secret = "natty-star";
+    private String secret;
     private long validity;
     private boolean authDisabled;
 

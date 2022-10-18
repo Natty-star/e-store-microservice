@@ -20,7 +20,7 @@ public class ShipmentHistory {
     @Column(name = "id")
     private int id;
 
-    private int orderId;
+    private Long orderId;
     private String street;
     private String city;
     private String state;

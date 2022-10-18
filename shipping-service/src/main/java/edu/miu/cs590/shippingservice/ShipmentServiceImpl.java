@@ -28,7 +28,7 @@ public class ShipmentServiceImpl implements ShipmentService {
     }
 
     @Override
-    public String checkShipmentStatus(int orderId) {
+    public String checkShipmentStatus(Long orderId) {
         return shipmentRepository.findByOrderId(orderId).getShipmentStatus();
     }
 

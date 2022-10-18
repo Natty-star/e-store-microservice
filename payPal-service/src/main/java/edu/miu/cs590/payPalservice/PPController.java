@@ -18,10 +18,10 @@ public class PPController {
 
 
     @GetMapping("/pay/{username}/{amount}")
-    public String processPayment ( @PathVariable("username") String username, @PathVariable("amount") Double amount){
+    public String processPayment ( @PathVariable("username") Long userId, @PathVariable("amount") Double amount){
 
 
-        String response = Service.processPayment(username, amount);
+        String response = Service.processPayment(userId, amount);
 
         return response;
     }

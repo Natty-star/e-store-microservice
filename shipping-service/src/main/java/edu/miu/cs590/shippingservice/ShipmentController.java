@@ -13,14 +13,14 @@ public class ShipmentController {
     private ShipmentService shipmentService;
 
     @PostMapping
-    public void shipOrder ( @RequestBody ShipmentRequest shipmentRequest){
-
+    public String shipOrder ( @RequestBody ShipmentRequest shipmentRequest){
         shipmentService.processShipment(shipmentRequest);
+        return shipmentService.checkShipmentStatus(shipmentRequest.getOrderId());
 
     }
 
     @GetMapping("/{orderId}")
-    public String checkShipmentStatus(@PathVariable int orderId){
+    public String checkShipmentStatus(@PathVariable Long orderId){
         return shipmentService.checkShipmentStatus(orderId);
     }
 

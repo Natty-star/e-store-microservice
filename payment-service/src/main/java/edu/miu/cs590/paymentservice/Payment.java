@@ -27,10 +27,10 @@ public class Payment {
     private String preferredPaymentMethod;
 
     @Column(name = "order_id")
-    private int orderId;
+    private Long orderId;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "userId")
+    private Long userId;
 
     @Column(name = "payment_date")
     private LocalDate paymentDate;

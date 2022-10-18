@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ShipmentRepository extends JpaRepository<ShipmentHistory, Integer> {
 
-    ShipmentHistory findByOrderId(int orderId);
+    ShipmentHistory findByOrderId(Long orderId);
     List<ShipmentHistory> findAllByShipmentStatus(String shipmentStatus);
     List<ShipmentHistory> findAllByCity(String city);
     List<ShipmentHistory> findAllByState(String state);

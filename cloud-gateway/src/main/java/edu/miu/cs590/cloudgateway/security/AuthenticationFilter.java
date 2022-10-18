@@ -24,19 +24,19 @@ import java.util.Objects;
 @RefreshScope
 @Component
 @Slf4j
-@RequiredArgsConstructor
 public class AuthenticationFilter  extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
 
+    @Autowired
     private final RouterValidator routerValidator;
     private final JwtTokenUtil jwtTokenUtil;
     private final JwtConfig jwtConfig;
 
-//    public AuthenticationFilter(RouterValidator routerValidator, JwtTokenUtil jwtTokenUtil, JwtConfig config) {
-//        super(Config.class);
-//        this.routerValidator = routerValidator;
-//        this.jwtTokenUtil = jwtTokenUtil;
-//        this.jwtConfig = config;
-//    }
+    public AuthenticationFilter(RouterValidator routerValidator, JwtTokenUtil jwtTokenUtil, JwtConfig config) {
+        super(Config.class);
+        this.routerValidator = routerValidator;
+        this.jwtTokenUtil = jwtTokenUtil;
+        this.jwtConfig = config;
+    }
 
     @Override
     public GatewayFilter apply(Config config) {

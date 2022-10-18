@@ -10,5 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class StockResponse {
-
+    private Long id;
+    private Long productId;
+    private Long quantity;
+    private Long thresholdQuantity;
 }

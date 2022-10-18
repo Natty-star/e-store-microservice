@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 9091
 
 spring:
   application:
@@ -13,6 +13,48 @@ spring:
             - Path=/api/user/**
           filters:
             - AuthenticationFilter
+        - id: ORDER-SERVICE
+          uri: lb://ORDER-SERVICE/
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - AuthenticationFilter
+        - id: PAYMENT-SERVICE
+          uri: lb://PAYMENT-SERVICE/
+          predicates:
+            - Path=/payment/**
+          filters:
+            - AuthenticationFilter
+        - id: PAYPAL-SERVICE
+          uri: lb://PAYPAL-SERVICE/
+          predicates:
+            - Path=/paypal/**
+          filters:
+            - AuthenticationFilter
+        - id: CREDITCARD-SERVICE
+          uri: lb://CREDITCARD-SERVICE/
+          predicates:
+            - Path=/credit-card/**
+          filters:
+            - AuthenticationFilter
+        - id: SHIPPING-SERVICE
+          uri: lb://SHIPPING-SERVICE/
+          predicates:
+            - Path=/shipment/**
+          filters:
+            - AuthenticationFilter
+        - id: STOCK-SERVICE
+          uri: lb://STOCK-SERVICE
+          predicates:
+            - Path=/api/stock/**
+          filters:
+            - AuthenticationFilter
+        - id: BANKACCOUNT-SERVICE
+          uri: lb://BANKACCOUNT-SERVICE/
+          predicates:
+            - Path=/bank-transfer/**
+          filters:
+            - AuthenticationFilter
 
 
 
@@ -24,4 +66,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+
+jwt:
+  secret: testing
+  validity: 20
+  authDisabled: true
 

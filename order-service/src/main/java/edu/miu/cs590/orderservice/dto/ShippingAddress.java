@@ -10,9 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ShippingAddress {
+    private Long orderId;
     private String city;
     private String state;
     private String zipcode;
     private String street;
-    private String MR;
+//    private String MR;
 }

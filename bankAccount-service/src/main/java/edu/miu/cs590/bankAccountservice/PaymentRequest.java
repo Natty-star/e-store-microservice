@@ -9,7 +9,7 @@ public class PaymentRequest implements java.io.Serializable {
 
     private int orderId;
     private String payment_type;
-    private String username;
+    private Long username;
     private double payment_amount;
 
 }

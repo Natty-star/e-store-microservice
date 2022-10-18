@@ -6,10 +6,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class PaymentRequest implements java.io.Serializable {
-
-    private int orderId;
-    private String preferredPaymentMethod;
-    private String username;
-    private double paymentAmount;
+    private Long orderId;
+    private Long userId;
+    private double price;
+    private String defaultPaymentMethod;
 
 }
