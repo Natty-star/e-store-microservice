@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.UNAUTHORIZED)
 @Slf4j
 public class JwtTokenMalformedException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
     public JwtTokenMalformedException(String message){
         super(message);
         log.error(this.getClass().getName() + ": " + message);
