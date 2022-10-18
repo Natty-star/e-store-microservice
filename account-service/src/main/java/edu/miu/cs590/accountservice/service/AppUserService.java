@@ -29,6 +29,7 @@ public class AppUserService {
                 .Id(appUser.getId())
                 .firstName(appUser.getFirstName())
                 .lastName(appUser.getLastName())
+                .userName(appUser.getUserName())
                 .email(appUser.getEmail())
                 .isActive(appUser.isActive())
                 .defaultPaymentMethod(appUser.getDefaultPaymentMethod())
@@ -42,6 +43,7 @@ public class AppUserService {
         AppUserResponse appUserResponse = new AppUserResponse();
         appUserResponse.setId(appUser.getId());
         appUserResponse.setEmail(appUser.getEmail());
+        appUserResponse.setUserName(appUser.getUserName());
         appUserResponse.setPassword(appUser.getPassword());
         appUserResponse.setFirstName(appUser.getFirstName());
         appUserResponse.setLastName(appUser.getLastName());

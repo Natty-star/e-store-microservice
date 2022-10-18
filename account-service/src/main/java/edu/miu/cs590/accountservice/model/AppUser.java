@@ -18,7 +18,7 @@ public class AppUser {
     private String email;
     private String password;
     private boolean isActive;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.MERGE)
     private List<Role> roles = new ArrayList<>();
     @OneToOne(cascade = CascadeType.ALL)
     private ShippingAddress shippingAddress;
